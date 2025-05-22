@@ -2,15 +2,12 @@ import json
 import sys
 import os
 
-# Add the project root directory to Python path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
 
 from database.sql_executor import SQLExecutor
 
-# Initialize SQL executor without explicit config
 executor = SQLExecutor()
 
-# Define the table name you want to extract
 table_name = "loan"
 
 # Fetch column info from MySQL
@@ -33,7 +30,6 @@ for col in columns:
         "description": col['Comment'] if col['Comment'] else "TODO: Add description"
     })
 
-# Optional: Create `relational_mapping.json` (empty if no foreign keys)
 relations = executor.execute_query(f"""
     SELECT column_name, referenced_table_name, referenced_column_name
     FROM information_schema.key_column_usage
