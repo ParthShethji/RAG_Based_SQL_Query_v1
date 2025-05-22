@@ -2,9 +2,9 @@ class DBConfig:
     def __init__(self):
         # Update these values with your actual MySQL credentials
         self.host = "localhost"
-        self.user = "root"  # Change this to your MySQL username
-        self.password = "parth"  # Change this to your MySQL password
-        self.database = "rag_app"  # Change this to your database name
+        self.user = ""  # Change this to your MySQL username
+        self.password = ""  # Change this to your MySQL password
+        self.database = ""  # Change this to your database name
         self.port = 3306
         self.charset = "utf8mb4"
 
